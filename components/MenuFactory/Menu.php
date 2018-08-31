@@ -27,7 +27,7 @@ class Menu
     /**
      * @return string
      */
-    public function render()
+    public function startRender()
     {
         $html = "<ul>";
         foreach ($this->subElements as $menuItem){

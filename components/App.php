@@ -25,12 +25,12 @@ class App
         $categoryData = $category->getData();
         $menuFactory = new MenuFactory();
         $menu = $menuFactory->runBuilding($categoryData);
-        echo $menu->render();
+        echo $menu->startRender();
 
         //Nested
         $categoryNested = new CategoryNested($db);
         $categoryDataNested = $categoryNested->getData();
         $menuNested = $menuFactory->runBuilding($categoryDataNested);
-        echo $menuNested->render();
+        echo $menuNested->startRender();
     }
 }

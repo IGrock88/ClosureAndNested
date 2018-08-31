@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: igroc
- * Date: 21.06.2018
- * Time: 10:08
- */
 
 namespace components\DB;
 use \components\Singleton;
@@ -12,7 +6,6 @@ use \PDO;
 
 abstract class AbstractDB
 {
-    use Singleton;
     /**
      * @var PDO $pdo
      */

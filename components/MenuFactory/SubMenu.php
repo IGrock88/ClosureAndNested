@@ -1,9 +1,5 @@
 <?php
-/**
- * User: IGrock
- * Date: 15.06.2018
- * Time: 16:00
- */
+
 namespace components\MenuFactory;
 
 /**

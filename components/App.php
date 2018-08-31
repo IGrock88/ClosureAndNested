@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: igroc
- * Date: 21.06.2018
- * Time: 9:53
- */
 
 namespace components;
 
@@ -20,22 +14,20 @@ use components\models\CategoryNested;
 class App
 {
 
-    use Singleton;
-
     /**
      * Launch application
      */
     public function init()
     {
-        //task1
-        $db = DB::getInstance();
+        //Clojure
+        $db = new DB();
         $category = new CategoryClojure($db);
         $categoryData = $category->getData();
         $menuFactory = new MenuFactory();
         $menu = $menuFactory->runBuilding($categoryData);
         echo $menu->render();
 
-        //task2
+        //Nested
         $categoryNested = new CategoryNested($db);
         $categoryDataNested = $categoryNested->getData();
         $menuNested = $menuFactory->runBuilding($categoryDataNested);

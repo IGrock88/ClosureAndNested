@@ -1,9 +1,4 @@
 <?php
-/**
- * User: IGrock
- * Date: 15.06.2018
- * Time: 15:54
- */
 
 namespace components\MenuFactory;
 

@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: igroc
- * Date: 21.06.2018
- * Time: 10:05
- */
+
 
 namespace components\models;
 

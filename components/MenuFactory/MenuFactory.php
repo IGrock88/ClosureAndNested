@@ -24,6 +24,7 @@ class MenuFactory
         foreach ($arr as $item){
             if(count($item['children'])){
                 $treeObj[] = new SubMenu($item['id'], $item['name'], $this->buildTreeObjects($item['children']));
+
             }
             else{
                 $treeObj[] = new MenuItem($item['id'], $item['name']);

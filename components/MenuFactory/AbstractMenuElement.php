@@ -11,7 +11,6 @@ abstract class AbstractMenuElement
 
     protected $id;
     protected $title;
-    protected $subElements;
 
     /**
      * AbstractMenuElement constructor.
@@ -19,11 +18,10 @@ abstract class AbstractMenuElement
      * @param string $title
      * @param array $subElements
      */
-    public function __construct($id = null, $title = null, array $subElements = null)
+    public function __construct($id, $title)
     {
         $this->id = $id;
         $this->title = $title;
-        $this->subElements = $subElements;
     }
    /**
      * Render menu elements

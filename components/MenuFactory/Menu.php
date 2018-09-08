@@ -25,18 +25,12 @@ class Menu
     }
 
     /**
-     * @return string
+     * @return array
      */
-    public function render()
+    public function getSubElements()
     {
-        $html = "<ul>";
-        foreach ($this->subElements as $menuItem){
-            /**
-             * @var $menuItem  AbstractMenuElement
-             */
-            $html = $html . $menuItem->render();
-        }
-        $html = $html . "</ul>";
-        return $html;
+        return $this->subElements;
     }
+
+
 }

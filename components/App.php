@@ -6,6 +6,7 @@ use components\DB\DB;
 use components\MenuFactory\MenuFactory;
 use components\models\CategoryClojure;
 use components\models\CategoryNested;
+use components\render\MenuRender;
 
 /**
  * Class App
@@ -19,18 +20,21 @@ class App
      */
     public function init()
     {
+        $menuRender = new MenuRender();
         //Clojure
         $db = new DB();
         $category = new CategoryClojure($db);
         $categoryData = $category->getData();
+        print_r($categoryData);
         $menuFactory = new MenuFactory();
-        $menu = $menuFactory->runBuilding($categoryData);
-        echo $menu->render();
+        $menuClojure = $menuFactory->runBuilding($categoryData);
+
+        echo $menuRender->startRender($menuClojure);
 
         //Nested
         $categoryNested = new CategoryNested($db);
         $categoryDataNested = $categoryNested->getData();
         $menuNested = $menuFactory->runBuilding($categoryDataNested);
-        echo $menuNested->render();
+        echo $menuRender->startRender($menuNested);
     }
 }

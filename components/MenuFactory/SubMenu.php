@@ -10,6 +10,18 @@ class SubMenu extends AbstractMenuElement
 {
 
     /**
+     * @property AbstractMenuElement[] $subElements
+     */
+    private $subElements;
+
+
+    public function __construct($id, $title, $subElements)
+    {
+        parent::__construct($id, $title);
+        $this->subElements = $subElements;
+    }
+
+    /**
      * @return string
      */
     public function render()
@@ -24,4 +36,6 @@ class SubMenu extends AbstractMenuElement
         $html = $html. "</ul></li>";
         return $html;
     }
+
+
 }

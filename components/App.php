@@ -3,7 +3,9 @@
 namespace components;
 
 use components\DB\DB;
+use components\MenuFactory\ClojureMenuFactory;
 use components\MenuFactory\MenuFactory;
+use components\MenuFactory\NestedMenuFactory;
 use components\models\CategoryClojure;
 use components\models\CategoryNested;
 use components\render\MenuRender;
@@ -21,20 +23,17 @@ class App
     public function init()
     {
         $menuRender = new MenuRender();
-        //Clojure
         $db = new DB();
-        $category = new CategoryClojure($db);
-        $categoryData = $category->getData();
-        print_r($categoryData);
-        $menuFactory = new MenuFactory();
-        $menuClojure = $menuFactory->runBuilding($categoryData);
 
+        //Clojure
+
+        $clojureFactory = new ClojureMenuFactory($db);
+        $menuClojure = $clojureFactory->start();
         echo $menuRender->startRender($menuClojure);
 
         //Nested
-        $categoryNested = new CategoryNested($db);
-        $categoryDataNested = $categoryNested->getData();
-        $menuNested = $menuFactory->runBuilding($categoryDataNested);
+        $nestedFactory = new NestedMenuFactory($db);
+        $menuNested = $nestedFactory->start();
         echo $menuRender->startRender($menuNested);
     }
 }

@@ -11,7 +11,7 @@ abstract class AbstractDB
      */
     protected $pdo;
     protected $host = '127.0.0.1';
-    protected $db = 'testGU';
+    protected $db = 'ClojureAndNested';
     protected $user = 'root';
     protected $pass = 'root';
     protected $charset = 'utf8';

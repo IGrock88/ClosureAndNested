@@ -4,10 +4,7 @@ namespace components;
 
 use components\DB\DB;
 use components\MenuFactory\ClojureMenuFactory;
-use components\MenuFactory\MenuFactory;
 use components\MenuFactory\NestedMenuFactory;
-use components\models\CategoryClojure;
-use components\models\CategoryNested;
 use components\render\MenuRender;
 
 /**

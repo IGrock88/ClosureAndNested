@@ -16,7 +16,6 @@ abstract class AbstractMenuElement
      * AbstractMenuElement constructor.
      * @param integer $id
      * @param string $title
-     * @param array $subElements
      */
     public function __construct($id, $title)
     {

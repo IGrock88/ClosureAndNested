@@ -8,6 +8,7 @@
 
 namespace components\render;
 
+use components\MenuFactory\AbstractMenuElement;
 use components\MenuFactory\Menu;
 
 class MenuRender implements IRender

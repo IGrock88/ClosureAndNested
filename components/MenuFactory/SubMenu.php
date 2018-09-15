@@ -15,10 +15,9 @@ class SubMenu extends AbstractMenuElement
     private $subElements;
 
 
-    public function __construct($id, $title, $subElements)
+    public function __construct($id, $title)
     {
         parent::__construct($id, $title);
-        $this->subElements = $subElements;
     }
 
     /**
@@ -35,6 +34,14 @@ class SubMenu extends AbstractMenuElement
         }
         $html = $html. "</ul></li>";
         return $html;
+    }
+
+    /**
+     * @param AbstractMenuElement[] $elements
+     */
+    public function addElements(array $elements)
+    {
+        $this->subElements = $elements;
     }
 
 

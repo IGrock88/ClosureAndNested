@@ -45,7 +45,10 @@ abstract class AbstractFactory
         $treeObj = [];
         foreach ($arr as $item){
             if(count($item['children'])){
-                $treeObj[] = new SubMenu($item['id'], $item['name'], $this->buildTreeObjects($item['children']));
+
+                $submenu = new SubMenu($item['id'], $item['name']);
+                $submenu->addElements($this->buildTreeObjects($item['children']));
+                $treeObj[] = $submenu;
 
             }
             else{

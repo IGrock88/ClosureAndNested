@@ -14,12 +14,6 @@ class SubMenu extends AbstractMenuElement
      */
     private $subElements;
 
-
-    public function __construct($id, $title)
-    {
-        parent::__construct($id, $title);
-    }
-
     /**
      * @return string
      */
